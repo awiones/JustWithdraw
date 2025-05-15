@@ -1,8 +1,16 @@
+<p align="center">
+  <img src="img/logo.png" alt="JustWithdraw Logo" width="180"/>
+</p>
+
 # JustWithdraw
 
-A simple, powerful Minecraft plugin for Paper servers that lets players withdraw in-game currency as physical bank notes! Supports Vault and highly configurable note display.
+> **⚠️ This plugin requires [Vault](https://dev.bukkit.org/projects/vault) and a compatible economy plugin (such as EssentialsX) to function!**
 
-> ⚠️ This plugin requires [Vault](https://dev.bukkit.org/projects/vault) and a compatible
+<p align="center">
+  <img src="img/command.png" alt="Withdraw Command Example" width="400"/>
+  <img src="img/descinv.png" alt="Bank Note in Inventory" width="400"/>
+  <img src="img/dropmoney.png" alt="Dropped Money Note" width="400"/>
+</p>
 
 ## Features
 
@@ -74,7 +82,7 @@ show-message:
 ## Support
 
 - Issues & suggestions: [GitHub Issues](https://github.com/awiones/JustWithdraw/issues)
-- Discord: (add your Discord link here)
+- Contribute: [Github Repo](https://github.com/awiones/JustWithdraw)
 
 ## License
 
