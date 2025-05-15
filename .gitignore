@@ -1,0 +1,47 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+.qodo
+
+target
+target/
+
+test
+test/
+/src/test/
+
+# VS Code
+.vscode/
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Other
+*.swp
+*~
+
+# Ignore config secrets (if any)
+# config-secret.yml

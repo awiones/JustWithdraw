@@ -1,0 +1,11 @@
+name: JustWithdraw
+version: 1
+main: com.milhae77.justwithdraw.JustWithdraw
+api-version: 1.21
+depend: [Vault]
+commands:
+  withdraw:
+    description: Withdraw money as a paper note
+    usage: /withdraw [amount]
+    aliases: [justwithdraw]
+    permission: justwithdraw.use
