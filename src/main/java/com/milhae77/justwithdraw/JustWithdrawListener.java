@@ -47,6 +47,29 @@ public class JustWithdrawListener implements Listener {
         double amount = container.get(valueKey, PersistentDataType.DOUBLE);
         Player player = event.getPlayer();
         Economy econ = plugin.getEconomy();
+
+        if (player.isSneaking()) {
+            // Shift right-click: consume all notes
+            int amountInStack = item.getAmount();
+            double totalValue = amount * amountInStack;
+
+            if (econ.depositPlayer(player, totalValue).transactionSuccess()) {
+                player.getInventory().setItemInMainHand(null);
+                player.sendMessage("§a✔ You have deposited §e" + econ.format(totalValue) + "§a into your account!");
+                player.sendMessage("§bNew balance: §e" + econ.format(econ.getBalance(player)));
+                // Show thank you message if set in config and enabled
+                boolean showThankYou = plugin.getConfig().getBoolean("show-message.enabled", true);
+                String thankYouMsg = plugin.getConfig().getString("show-message.thank-you-message", "");
+                if (showThankYou && thankYouMsg != null && !thankYouMsg.isEmpty()) {
+                    player.sendMessage(thankYouMsg);
+                }
+                event.setCancelled(true);
+            } else {
+                player.sendMessage("§c✖ Failed to deposit the money. Please contact an administrator.");
+            }
+            return;
+        }
+
         // Deposit the money
         if (econ.depositPlayer(player, amount).transactionSuccess()) {
             // Remove one paper from the hand
